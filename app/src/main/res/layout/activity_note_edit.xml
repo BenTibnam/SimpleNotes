@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteEditActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="347dp"
+                android:layout_height="58dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/wastebasket"
+                    android:onClick="deleteButtonPressed" />
+
+                <EditText
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/floppyunsaved"
+                    android:onClick="saveButtonPressed" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editBox"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:selectAllOnFocus="false"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/backBtn"
+                    android:layout_width="53dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/backbutton"
+                    android:onClick="backButtonPressed" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

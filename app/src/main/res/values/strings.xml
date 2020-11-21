@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SimpleNotes</string>
+    <string-array name="font_options">
+        <item>sans</item>
+        <item>casual</item>
+        <item>monospace</item>
+    </string-array>
+
+    <string name="bullet_point">•</string>
+</resources>
