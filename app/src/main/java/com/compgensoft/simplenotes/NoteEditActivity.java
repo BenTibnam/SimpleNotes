@@ -66,8 +66,6 @@ public class NoteEditActivity extends Activity {
         }
     }
 
-    // honestly it seems like there will be a bug in the future regarding
-    // loading content, something to look out for if the content is non existent
     private void load() {
         String title = titleText.getText().toString();
         String programExtension = ".simp";
@@ -122,9 +120,19 @@ public class NoteEditActivity extends Activity {
         contentText.setTypeface(getTypeFace(sharedPreferences.getString(FONT_NAME, "sans")));
         contentText.setTextSize(sharedPreferences.getInt(FONT_SIZE, 12));
 
+        contentText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                saveButton.setBackground(getDrawable(R.drawable.floppyunsaved));
+                return NoteEditActivity.super.onKeyDown(i, keyEvent);
+            }
+        });
+
+
 
         if(noteName.equals("\\newSimp\\")){
             titleText.setText("");
+            titleText.setHint("Untitled");
         }else{
             String title = noteName;
             titleText.setText(title);
@@ -132,20 +140,6 @@ public class NoteEditActivity extends Activity {
         }
 
 
-    }
-
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent KEvent)
-    {
-        int keyaction = KEvent.getAction();
-
-        if(keyaction == KeyEvent.ACTION_DOWN)
-        {
-           saveButton.setBackground(getDrawable(R.drawable.floppyunsaved));
-        }
-
-
-        return super.dispatchKeyEvent(KEvent);
     }
 
     private Typeface getTypeFace(String string) {
