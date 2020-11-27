@@ -123,7 +123,7 @@ public class NoteEditActivity extends Activity {
         contentText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                saveButton.setBackground(getDrawable(R.drawable.floppyunsaved));
+                saveButton.setBackground(getDrawable(R.drawable.floppydisk));
                 return NoteEditActivity.super.onKeyDown(i, keyEvent);
             }
         });
@@ -163,7 +163,7 @@ public class NoteEditActivity extends Activity {
     public void saveButtonPressed(View view){
         save();
         Toast.makeText(this, "Saved Note", Toast.LENGTH_SHORT).show();
-        saveButton.setBackground(getDrawable(R.drawable.floppysaved));
+        saveButton.setBackground(getDrawable(R.drawable.floppydisk));
     }
 
     public void deleteButtonPressed(View view){
